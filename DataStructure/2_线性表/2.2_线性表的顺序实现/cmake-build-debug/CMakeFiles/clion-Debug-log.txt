@@ -1,0 +1,1 @@
+"D:\software\Clion\install\CLion 2023.1.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/software/Clion/install/CLion 2023.1.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S D:\yan\DataStructure\2_线性表\2.2_线性表的顺序实现 -B D:\yan\DataStructure\2_线性表\2.2_线性表的顺序实现\cmake-build-debug
