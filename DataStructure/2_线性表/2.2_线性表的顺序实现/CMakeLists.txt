@@ -3,4 +3,4 @@ project(2_2_ C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(2_2_ main.c)
+add_executable(2_2_ SqList.h SqList.c SqListType.h work.c)
