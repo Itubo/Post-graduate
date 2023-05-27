@@ -3,7 +3,7 @@
 //
 
 /*  王道课后题
- * 2.2
+ *  2.2
  * */
 
 #include <stdio.h>
@@ -112,6 +112,12 @@ void work_03(SqList_D * L, ElemType x) {
     //修改数组元素个数为 k 个
     L->length = k;
 }
+
+/*
+ * 删除给定 s t 之间的所有元素。
+ * */
+
+
 
 
 
