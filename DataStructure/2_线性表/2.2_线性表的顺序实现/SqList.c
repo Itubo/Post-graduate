@@ -5,7 +5,6 @@
 #include <stdlib.h>
 
 
-
 enum Status InitList(SqList_D * L) {
     L->MaxSize = 50;
     L->data = (ElemType *) malloc (L->MaxSize * sizeof (ElemType));

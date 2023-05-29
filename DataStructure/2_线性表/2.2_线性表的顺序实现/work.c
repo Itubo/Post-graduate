@@ -7,8 +7,10 @@
  * */
 
 #include <stdio.h>
+#include <stdbool.h>
 #include "SqList.h"
 #include "SqList.c"
+
 //删除顺序表中具有最小值的元素。
 ElemType work_01(SqList_D * L);
 void work_02(SqList_D * L);
@@ -25,14 +27,15 @@ int main() {
 //        ListInsert(sq, i + 1,  i) == OK ? printf("insert successful\n")
 //                                        : printf("insert failure\n");
 //    }
-    ListInsert(sq,1,5);
-    ListInsert(sq,1,6);
-    ListInsert(sq,1,3);
-    ListInsert(sq,1,8);
-    ListInsert(sq,1,1);
-    ListInsert(sq,1,9);
-    ListInsert(sq,1,7);
-    ListInsert(sq,1,2);
+    ListInsert(sq, 1, 5);
+    ListInsert(sq, 1, 6);
+    ListInsert(sq, 1, 3);
+    ListInsert(sq, 1, 8);
+    ListInsert(sq, 1, 1);
+    ListInsert(sq, 1, 9);
+    ListInsert(sq, 1, 7);
+    ListInsert(sq, 1, 2);
+    ListInsert(sq, 1, 10);
 //    ListInsert(sq,1,1);
 
 
@@ -117,6 +120,24 @@ void work_03(SqList_D * L, ElemType x) {
  * 删除给定 s t 之间的所有元素。
  * */
 
+bool work_04(SqList_D * L, int s, int t) {
+    if (L) {
+        if (s < t || L->length == 0) {
+            printf("参数不合法，删除失败！");
+            return false;
+        }
+        int i,j;
+        //找到 s 的位置
+        for (i = 0; i < L->length && L->data[i] < s; i++);
+        //全部都小于 s 的情况。
+        if (i >= L->length) {
+            return false;
+        }
+        //找到 j
+        for (j = i; j < L->length && L->data[j] < t; j++);
+
+    }
+}
 
 
 
