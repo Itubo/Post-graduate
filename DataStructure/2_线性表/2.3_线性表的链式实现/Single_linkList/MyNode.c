@@ -103,11 +103,30 @@ bool InsertPriorNode (LNode *p, ElemType e) {
     return true;
 }
 
+bool DestoryNode (LNode *p) {
+    //p is NULL
+    if (p == NULL) return false;
+    LNode *q = p->next;
+    // the node after p is NULL (p node is the last one)
+    if (q == NULL) return false;
+    p->next = q->next;
+    free(q);
+    q = NULL;
+    return true;
+}
+
+/**
+ * attention
+ * have a big problem!
+ * @param L
+ * @return
+ */
 bool DestructionList(LinkList *L) {
     if (*L == NULL) {
         printf("This single linked list haven't initated!\n");
         return false;
     }
+    free(*L);
     *L = NULL;
     return true;
 }

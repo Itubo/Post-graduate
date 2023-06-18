@@ -69,6 +69,8 @@ bool ListInsert_head(LinkList *L, int index, ElemType e);
  * @return bool
  */
 
+bool DestoryNode (LNode *p);
+
 bool DestructionList(LinkList *L);
 
 
