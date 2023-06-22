@@ -17,6 +17,19 @@ bool InitDLinkList (DLinkList *L) {
     return true;
 }
 
+bool InsertNextNode (DNode *p, DNode *s) {
+    if (p == NULL || s == NULL) {
+        return false;
+    }
+    s->next = p->next;
+    if (p->next != NULL) {
+        p->next->prior = s;
+    }
+    s->prior = p;
+    p->next = s;
+    return true;
+}
+
 bool DeleteNextNode (DNode *p, ElemType *e) {
     if (p == NULL) return false;
     DNode *q = p->next;
@@ -56,4 +69,18 @@ void DestoryList(DLinkList *L) {
         DestoryNode(*L);
     }
     *L = NULL;
+}
+
+void showList(DLinkList *L) {
+    printf("print begin!\n");
+    if (*L == NULL) {
+        printf("please check your parameter!\n");
+        return;
+    }
+    DNode *p = (*L)->next;
+    while (p != NULL) {
+        printf("  <--- %d----->  \n",p->data);
+        p = p->next;
+    }
+    printf("print end!\n");
 }

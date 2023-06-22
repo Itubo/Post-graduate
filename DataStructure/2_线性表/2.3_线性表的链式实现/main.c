@@ -3,15 +3,16 @@
 //
 
 #include <stdio.h>
-#include "Single_linkList/MyNode.c"
-
-
+#include <stdlib.h>
+//#include "Single_linkList/MyNode.c"
+//#include "Double_linkedlist/MyDNode.c"
+#include "Static_linkedlist/MySNode.c"
 
 int main() {
     printf("hello world!\n");
-    LinkList L;
+    DLinkList L;
 
-    if (InitList_Head(&L)) {
+    if (InitDLinkList(&L)) {
         printf("malloction succeed!\n");
     }
     else {
@@ -25,18 +26,19 @@ int main() {
     }
 
     int i = 5;
-    int temp = 0;
     while(i--) {
         int temp;
         printf("please input the number temp:");
         scanf("%d",&temp);
-        if (ListInsert_head(&L, 1, temp)) {
+        DNode * p = (DNode *) malloc (sizeof(DNode));
+        p->data = temp;
+        if (InsertNextNode(L, p)) {
             printf("Insert succeed!\n");
         }
     }
-    showLinkedList(L);
+    showList(&L);
 
-    DestructionList(&L);
+    DestoryList(&L);
     if (L == NULL) {
         printf("destory succeed!\n");
     }

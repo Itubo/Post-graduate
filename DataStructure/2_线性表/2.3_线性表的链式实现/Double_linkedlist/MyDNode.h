@@ -47,4 +47,6 @@ bool DestoryNode (DNode *p);
 
 void DestoryList (DLinkList *L);
 
+void showList(DLinkList *L);
+
 #endif //INC_2_3_线性表的链式实现_MYDNODE_H
